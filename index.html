@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body >
+	<div id="app" >
+		<section id="top">
+			<div id="stack">
+				<div  id="stack-pile" class="card-size card-holder" >
+					<div v-for="cards in stack" class="card-size card card-down" @click="deal()"></div>
+				</div>
+			</div>
+			<div id="home">
+				<div v-for="pile in home" class="card-size card-holder" @click="homeDrop(pile)">
+					<div v-for="(card, card_index) in pile" class="card-size card card-up" :class="[ card.face == 'up' ? card.set : '', card.face == 'up' ? 'card-' + card.number : '']"  @click="grab(pile, card, $event)">
+					
+				</div>
+				</div>
+			</div>
+		</section>
+		<section id="table">
+			<div v-for="pile in table" class="card-size card-holder">
+				<div v-show="pile.length == 0" class="card-size" @click="drop(pile)"></div>
+				<div v-for="(card, card_index) in pile" class="card-size card" :class="['card-' + card.face, card.face == 'up' ? card.set : '', card.face == 'up' ? 'card-' + card.number : '']" :style="'top:' + (card_index * 30) + 'px;'" @click="grab(pile, card, $event)">
+					
+				</div>
+			</div>
+		</section>
+		<div id="hand" :style="'top:'+hand.y+'px; left:'+hand.x+'px;'">
+			<div v-for="(card, card_index) in hand.pile" class="card-size card" :class="['card-' + card.face, card.face == 'up' ? card.set : '', card.face == 'up' ? 'card-' + card.number : '']" :style="'top:' + (card_index * 30) + 'px;'" @click="unGrab()">
+					
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>

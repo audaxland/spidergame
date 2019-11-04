@@ -1,0 +1,91 @@
+.card-size {
+	width: 100px;
+	height: 156px;
+	border:1px solid silver;
+	border-radius: 5px;
+}
+
+.card-holder {
+	margin-left: 10px;
+	margin-right: 10px;
+	background: green;
+	position: relative;
+}
+
+.card-down {
+	background: darkblue;
+}
+
+.card-up {
+	background: white;
+}
+
+body {
+	background: darkgreen;
+}
+#app {
+	height: 100vh;
+}
+#top {
+	display: flex;
+
+}
+
+#stack {
+	flex: 1;
+}
+
+.card {
+	position: absolute;
+}
+
+#home {
+	display:flex;
+}
+
+#home .card + .card {
+	display: none;
+}
+
+#table {
+	margin-top: 30px;
+	display:flex;
+}
+
+.♥, .♦ {
+	color: red;
+}
+
+.♥ {	background-position-y: 0; }
+.♠ {	background-position-y: 100%; }
+.♦ {	background-position-y: 200%; }
+.♣ {	background-position-y: 300%; }
+
+.card-1 { background-position-x: 7.692307692%; }
+.card-2 { background-position-x: 15.384615384%; }
+.card-3 { background-position-x: 23.076923076%; }
+.card-4 { background-position-x: 30.769230768%; }
+.card-5 { background-position-x: 38.46153846%; }
+.card-6 { background-position-x: 46.153846152%; }
+.card-7 { background-position-x: 53.846153844%; }
+.card-8 { background-position-x: 61.538461536%; }
+.card-9 { background-position-x: 69.230769228%; }
+.card-10 { background-position-x: 76.92307692%; }
+.card-11 { background-position-x: 84.615384612%; }
+.card-12 { background-position-x: 92.307692304%; }
+.card-13 { background-position-x: 99.999999996%; }
+
+#hand {
+	position:fixed;
+
+}
+
+#hand .card {
+	border:3px solid yellow;
+
+}
+
+.card {
+	background-image: url(cards.png);
+	background-size: 1410%;
+}
